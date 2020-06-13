@@ -51,7 +51,7 @@ jobs:
               zip -r final/GSI-Aonly.7z /home/runner/work/actions_build_ErfanGSIs/actions_build_ErfanGSIs/ErfanGSIs/output/*-Aonly-*.img
               curl -F "file=@/home/runner/work/actions_build_ErfanGSIs/actions_build_ErfanGSIs/final/GSI-Aonly.7z" https://file.io
               
-       - name: Zip AB and upload to Bitsend  
+       - name: Zip AB and upload to File.io 
          run: |
               zip -r final/GSI-AB.7z /home/runner/work/actions_build_ErfanGSIs/actions_build_ErfanGSIs/ErfanGSIs/output/*-AB-*.img
               curl -F "file=@/home/runner/work/actions_build_ErfanGSIs/actions_build_ErfanGSIs/final/GSI-AB.7z" https://file.io

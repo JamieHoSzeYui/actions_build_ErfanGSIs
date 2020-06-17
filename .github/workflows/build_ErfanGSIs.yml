@@ -55,7 +55,6 @@ jobs:
        - name: Zip Aonly and upload 
          run: |
               mkdir final
-              sudo chmod -R 777 /home/runner/work/actions_build_ErfanGSIs/actions_build_ErfanGSIs/ErfanGSIs/output/
               zip -r final/$ZIP_NAME-GSI-Aonly.7z /home/runner/work/actions_build_ErfanGSIs/actions_build_ErfanGSIs/ErfanGSIs/output/*-Aonly-*.img
               curl -sL https://git.io/file-transfer | sh
               ./transfer bit final/jamie's-GSI-Aonly.7z          

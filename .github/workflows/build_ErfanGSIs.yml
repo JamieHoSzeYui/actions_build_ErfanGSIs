@@ -14,7 +14,7 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://oxygenos.oneplus.net/OnePlus7TProOxygen_14.O.17_OTA_017_all_2005192142_be17b4bb39484216.zip
+  ROM_URL: https://oxygenos.oneplus.net/OnePlus7TOxygen_14.O.13_OTA_013_all_2005192145_5ecebc1d9bde4987.zip
   ROM_NAME: OxygenOS
   DYNAMIC_TYPE: OxygenOS
   ZIP_NAME: OxygenOS

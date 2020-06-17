@@ -49,9 +49,9 @@ jobs:
               cd ErfanGSIs
               sudo aria2c $ROM_URL
               mv *.zip fw.zip
-              sudo ./dynamic.sh $DYNAMIC_TYPE fw.zip
-              sudo ./make.sh out $ROM_NAME Aonly output
-              sudo ./make.sh out $ROM_NAME AB output
+              sudo ./dynamic.sh $DYNAMIC_TYPE fw.zip system
+              sudo ./make.sh system $ROM_NAME Aonly output
+              sudo ./make.sh system $ROM_NAME AB output
        
        - name: Zip Aonly and upload 
          run: |

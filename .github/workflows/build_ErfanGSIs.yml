@@ -47,7 +47,7 @@ jobs:
        - name: Download Stock Rom & Generate GSI
          run: |
               cd ErfanGSIs
-              sudo aria2c $ROM_URL
+              sudo wget $ROM_URL
               mv *.zip fw.zip
               sudo ./dynamic.sh $DYNAMIC_TYPE fw.zip system
               sudo ./make.sh system $ROM_NAME Aonly output
@@ -57,13 +57,13 @@ jobs:
          run: |
               mkdir final
               sudo chmod -R 777 ErfanGSIs/output
-              zip -r /home/runner/work/actions_build_ErfanGSIs/actions_build_ErfanGSIs/ErfanGSIs/output/$ZIP_NAME-GSI-Aonly.7z /home/runner/work/actions_build_ErfanGSIs/actions_build_ErfanGSIs/ErfanGSIs/output/*-Aonly-*.img
+              zip -r final/$ZIP_NAME-GSI-Aonly.7z /home/runner/work/actions_build_ErfanGSIs/actions_build_ErfanGSIs/ErfanGSIs/output/*-Aonly-*.img
               curl -sL https://git.io/file-transfer | sh
-              ./transfer bit /home/runner/work/actions_build_ErfanGSIs/actions_build_ErfanGSIs/ErfanGSIs/output/$ZIP_NAME-GSI-Aonly.7z          
+              ./transfer bit final/jamie's-GSI-Aonly.7z          
        - name: Zip AB and upload 
          run: |
-              zip -r /home/runner/work/actions_build_ErfanGSIs/actions_build_ErfanGSIs/ErfanGSIs/output/$ZIP_NAME-GSI-AB.7z /home/runner/work/actions_build_ErfanGSIs/actions_build_ErfanGSIs/ErfanGSIs/output/*-AB-*.img
-              ./transfer bit /home/runner/work/actions_build_ErfanGSIs/actions_build_ErfanGSIs/ErfanGSIs/output/$ZIP_NAME-GSI-AB.7z      
+              zip -r final/$ZIP_NAME-GSI-AB.7z /home/runner/work/actions_build_ErfanGSIs/actions_build_ErfanGSIs/ErfanGSIs/output/*-AB-*.img
+              ./transfer bit final/jamie's-GSI-AB.7z      
        - name: Upload build info
          run: |
               ./transfer bit /home/runner/work/actions_build_ErfanGSIs/actions_build_ErfanGSIs/ErfanGSIs/output/*-Aonly-*.txt

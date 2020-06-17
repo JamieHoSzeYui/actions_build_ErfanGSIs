@@ -16,6 +16,7 @@ on:
 env:
   ROM_URL: https://ayera.dl.sourceforge.net/project/miuiromports//Whyred/MASIK%20X/Masik%20X%2013.2%20v2%20Whyred%20port.zip
   ROM_NAME: MIUI:MasikX
+  DYNAMIC_TYPE: OxygenOS
   ZIP_NAME: MasikX
   TZ: Asia/Shanghai
 
@@ -44,7 +45,13 @@ jobs:
               sudo bash setup.sh
        
        - name: Download Stock Rom & Generate GSI
-         run: sudo ./ErfanGSIs/url2GSI.sh $ROM_URL $ROM_NAME
+         run: |
+              cd ErfanGSIs
+              sudo wget $ROM_URL
+              mv *.zip fw.zip
+              sudo ./dynamic.sh $DYNAMIC_TYPE fw.zip
+              sudo ./make.sh out $ROM_NAME Aonly output
+              sudo ./make.sh out $ROM_NAME AB output
        
        - name: Zip Aonly and upload 
          run: |

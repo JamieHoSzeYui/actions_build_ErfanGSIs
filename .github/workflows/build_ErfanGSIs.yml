@@ -14,10 +14,10 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://ayera.dl.sourceforge.net/project/miuiromports//Whyred/MASIK%20X/Masik%20X%2013.2%20v2%20Whyred%20port.zip
-  ROM_NAME: MIUI:MasikX
+  ROM_URL: https://oxygenos.oneplus.net/OnePlus7TProOxygen_14.O.17_OTA_017_all_2005192142_be17b4bb39484216.zip
+  ROM_NAME: OxygenOS
   DYNAMIC_TYPE: OxygenOS
-  ZIP_NAME: MasikX
+  ZIP_NAME: OxygenOS
   TZ: Asia/Shanghai
 
 jobs:

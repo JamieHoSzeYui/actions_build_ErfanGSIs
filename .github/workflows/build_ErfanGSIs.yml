@@ -15,7 +15,7 @@ on:
     
 env:
   ROM_URL: https://s3.amazonaws.com/cheryl-factory-images/aura-p-release-3141-user-full.zip
-  ROM_NAME: Generic:Razer
+  ROM_NAME: Razer
   ZIP_NAME: Razer
   TZ: Asia/Shanghai
 

@@ -14,9 +14,9 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://185-23-180-2.ksyungslb.com/bigota.d.miui.com/V11.0.4.0.QDLMIXM/miui_DAISYGlobal_V11.0.4.0.QDLMIXM_43d1799e9a_10.0.zip
-  ROM_NAME: MIUI:AndroidOne
-  ZIP_NAME: AndroidOne
+  ROM_URL: https://s3.amazonaws.com/cheryl-factory-images/aura-p-release-3141-user-full.zip
+  ROM_NAME: Generic:Razer
+  ZIP_NAME: Razer
   TZ: Asia/Shanghai
 
 jobs:
@@ -50,7 +50,12 @@ jobs:
               sudo ./zip2img.sh fw.zip
               mkdir system
               sudo mount cache/system.img system
-              cd system/system/data-app
+              cd system/system/app
+              echo "System app folder"
+              ls
+              cd ..
+              cd priv-app
+              echo "System privapp folder"
               ls
               cd ..
               cd ..

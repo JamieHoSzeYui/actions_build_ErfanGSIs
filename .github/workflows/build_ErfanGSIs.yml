@@ -15,8 +15,8 @@ on:
     
 env:
   ROM_URL: https://185-23-180-2.ksyungslb.com/bigota.d.miui.com/V11.0.4.0.QDLMIXM/miui_DAISYGlobal_V11.0.4.0.QDLMIXM_43d1799e9a_10.0.zip
-  ROM_NAME: Generic
-  ZIP_NAME: Bullshit
+  ROM_NAME: MIUI:AndroidOne
+  ZIP_NAME: AndroidOne
   TZ: Asia/Shanghai
 
 jobs:
@@ -50,10 +50,7 @@ jobs:
               sudo ./zip2img.sh fw.zip
               mkdir system
               sudo mount cache/system.img system
-              cd system/system/app
-              ls
-              cd ..
-              cd priv-app
+              cd system/system/data-app
               ls
               cd ..
               cd ..

@@ -16,7 +16,6 @@ on:
 env:
   ROM_URL: https://oxygenos.oneplus.net/OnePlus7TOxygen_14.O.13_OTA_013_all_2005192145_5ecebc1d9bde4987.zip
   ROM_NAME: OxygenOS
-  DYNAMIC_TYPE: OxygenOS
   ZIP_NAME: OxygenOS
   TZ: Asia/Shanghai
 
@@ -48,7 +47,17 @@ jobs:
               cd ErfanGSIs
               sudo aria2c -x16 $ROM_URL
               mv *.zip fw.zip
-              sudo ./dynamic.sh $DYNAMIC_TYPE fw.zip system
+              sudo ./zip2img.sh fw.zip
+              mkdir system
+              sudo mount cache/system.img system
+              cd system/system/app
+              ls
+              cd ..
+              cd priv-app
+              ls
+              cd ..
+              cd ..
+              cd ..
               sudo ./make.sh system $ROM_NAME Aonly output
               sudo ./make.sh system $ROM_NAME AB output
        

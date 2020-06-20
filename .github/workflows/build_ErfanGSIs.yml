@@ -48,7 +48,6 @@ jobs:
               cd ErfanGSIs
               sudo aria2c -x16 $ROM_URL
               mv *.zip fw.zip
-              mkdir system
               sudo ./dynamic.sh $DYNAMIC_TYPE fw.zip system
               mkdir out
               sudo ./make.sh system $ROM_NAME Aonly out

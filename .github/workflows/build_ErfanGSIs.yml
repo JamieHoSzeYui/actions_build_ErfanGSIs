@@ -16,6 +16,7 @@ on:
 env:
   ROM_URL: https://s3.amazonaws.com/cheryl-factory-images/aura-p-release-3141-user-full.zip
   ROM_NAME: RazerUI
+  DYNAMIC_TYPE: OxygenOS
   ZIP_NAME: RazerUI
   TZ: Asia/Shanghai
 
@@ -47,21 +48,11 @@ jobs:
               cd ErfanGSIs
               sudo aria2c -x16 $ROM_URL
               mv *.zip fw.zip
-              sudo ./zip2img.sh fw.zip
               mkdir system
-              sudo mount cache/system.img system
-              cd system/system/app
-              echo "System app folder"
-              ls
-              cd ..
-              cd priv-app
-              echo "System privapp folder"
-              ls
-              cd ..
-              cd ..
-              cd ..
-              sudo ./make.sh system $ROM_NAME Aonly output
-              sudo ./make.sh system $ROM_NAME AB output
+              sudo ./dynamic.sh $DYNAMIC_TYPE fw.zip system
+              mkdir out
+              sudo ./make.sh system $ROM_NAME Aonly out
+              sudo ./make.sh system $ROM_NAME AB out
        
        - name: Zip Aonly and upload 
          run: |

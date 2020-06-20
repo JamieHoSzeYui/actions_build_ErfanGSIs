@@ -50,6 +50,7 @@ jobs:
               mv *.zip fw.zip
               sudo ./dynamic.sh $DYNAMIC_TYPE fw.zip system
               mkdir final
+              rm -rf fw.zip
               sudo ./make.sh system $ROM_NAME Aonly final
               sudo ./make.sh system $ROM_NAME AB final
        

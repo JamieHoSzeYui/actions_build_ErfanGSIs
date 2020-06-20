@@ -14,10 +14,10 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://s3.amazonaws.com/cheryl-factory-images/aura-p-release-3141-user-full.zip
-  ROM_NAME: RazerUI
+  ROM_URL: https://oxygenos.oneplus.net/OnePlus7TProOxygen_14.O.17_OTA_017_all_2005192142_be17b4bb39484216.zip
+  ROM_NAME: OxygenOS
   DYNAMIC_TYPE: OxygenOS
-  ZIP_NAME: RazerUI
+  ZIP_NAME: OOS
   TZ: Asia/Shanghai
 
 jobs:

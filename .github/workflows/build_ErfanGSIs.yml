@@ -59,14 +59,16 @@ jobs:
               mv *.zip fw.zip
               sudo ./dynamic.sh $DYNAMIC_TYPE fw.zip system
               mkdir final
-              rm -rf fw.zip
+              sudo rm -rf fw.zip
+              sudo rm -rf out
+              sudo rm -rf output
               sudo ./make.sh system $ROM_NAME Aonly final
               sudo ./make.sh system $ROM_NAME AB final
        
        - name: Zip Aonly and upload 
          run: |
               cd ErfanGSIs
-              rm -rf system
+              sudo rm -rf system
               cd final
               zip -r $ZIP_NAME-GSI-Aonly.7z *-Aonly-*.img
               curl -sL https://git.io/file-transfer | sh

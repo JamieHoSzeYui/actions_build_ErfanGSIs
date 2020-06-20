@@ -56,7 +56,9 @@ jobs:
        
        - name: Zip Aonly and upload 
          run: |
-              cd ErfanGSIs/final
+              cd ErfanGSIs
+              rm -rf system
+              cd final
               zip -r $ZIP_NAME-GSI-Aonly.7z *-Aonly-*.img
               curl -sL https://git.io/file-transfer | sh
               ./transfer bit $ZIP_NAME-GSI-Aonly.7z          
